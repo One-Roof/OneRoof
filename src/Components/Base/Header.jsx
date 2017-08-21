@@ -6,7 +6,10 @@ class Header extends Component {
       <div>
         <div><a href="/postlist">Postings</a></div>
         <div><a href="/calendar">Calendar</a></div>
-        <div><a href="/">Home</a></div>      
+        <div><a href="/albums">Albums</a></div>
+        <div><a href="/">Home</a></div>
+        <div><a href="/login">Log In</a></div>
+        <div><a href="/login">Sign Up</a></div>
       </div>
     )
   }
