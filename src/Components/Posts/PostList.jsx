@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import OnePost from './OnePost'
+import OnePost from './OnePost';
+import '../../Styles/PostList.css';
 
 class PostList extends Component {
   constructor(props) {
@@ -10,6 +11,19 @@ class PostList extends Component {
   render() {
     return (
       <div className="">
+        <form>
+          <label>
+            Title:
+            <input className="titleTextBox"type="text" name="name"/>
+          </label>
+          <br/>
+          <label>
+            Message:
+            <input className="messageTextBox" type="text" />
+          </label>
+          <br/>
+          <input type="Submit" value="Submit"/>
+        </form>
         <div className="">
           <h2>Recent Posts:</h2>
         </div>
