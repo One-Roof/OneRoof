@@ -4,7 +4,7 @@ class Header extends Component {
   render() {
     return (
       <div>
-        <div><a href="/postlist">Postings</a></div>
+        <div><a href="/messagelist">Messages</a></div>
         <div><a href="/calendar">Calendar</a></div>
         <div><a href="/albums">Albums</a></div>
         <div><a href="/">Home</a></div>

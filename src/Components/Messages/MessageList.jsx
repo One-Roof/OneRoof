@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import OnePost from './OnePost';
+import OneMessage from './OneMessage';
 import '../../Styles/PostList.css';
 
 class PostList extends Component {
@@ -31,7 +31,7 @@ class PostList extends Component {
           Refresh
         </button>
         <div>
-          <OnePost />
+          <OneMessage />
         </div>
       </div>
     );

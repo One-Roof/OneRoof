@@ -8,7 +8,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 //IMPORT COMPONENTS
 import Home from './Components/Home';
-import PostList from './Components/Posts/PostList';
+import MessageList from './Components/Messages/MessageList';
 import Calendar from './Components/Calendar/Calendar.jsx';
 import BaseLayout from './Components/Base/BaseLayout';
 import Albums from './Components/Album/Albums';
@@ -21,7 +21,7 @@ ReactDOM.render(
         <Route path="/albums" component={Albums}/>
         <Route path="/login" component={LoginSignUp}/>
         <Route path="/calendar" component={Calendar}/>
-        <Route path="/postlist" component={PostList}/>
+        <Route path="/messagelist" component={MessageList}/>
         <Route path="/" component={Home}/>
       </Switch>
     </BaseLayout>
