@@ -25,7 +25,7 @@ class LoginForm extends Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
-  
+
 
     let userArray = this.props.resp.map(credential => {
       if (credential.email === this.state.email && credential.lastName === this.state.lastName) {
