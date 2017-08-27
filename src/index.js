@@ -19,10 +19,10 @@ ReactDOM.render(
     <BaseLayout>
       <Switch>
         <Route path="/albums" component={Albums}/>
-        <Route path="/login" component={LoginSignUp}/>
+        <Route path="/home" component={Home}/>
         <Route path="/calendar" component={Calendar}/>
         <Route path="/messagelist" component={MessageList}/>
-        <Route path="/" component={Home}/>
+        <Route path="/" component={LoginSignUp}/>
       </Switch>
     </BaseLayout>
   </BrowserRouter>,
