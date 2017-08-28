@@ -9,7 +9,7 @@ import registerServiceWorker from './registerServiceWorker';
 //IMPORT COMPONENTS
 import Home from './Components/Home';
 import MessageList from './Components/Messages/MessageList';
-import Calendar from './Components/Calendar/Calendar.jsx';
+import Calendar from './Components/Calendar/Calendar.js';
 import BaseLayout from './Components/Base/BaseLayout';
 import Albums from './Components/Album/Albums';
 import LoginSignUp from './Components/LoginSignUp.jsx';

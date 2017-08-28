@@ -3,7 +3,7 @@ import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
 import events from './events';
 
-import '../styles/Calendar.css'
+import '../../Styles/Calendar.css'
 
 BigCalendar.momentLocalizer(moment);
 
