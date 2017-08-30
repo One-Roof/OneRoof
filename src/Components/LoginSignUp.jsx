@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Redirect, Refresh } from 'react-router'
 import LoginForm from './LoginForm';
 import SignUpForm from './SignUpForm';
+import '../Styles/LoginSignUp.css'
 
 class LoginSignUp extends Component {
   constructor() {
@@ -50,8 +51,11 @@ class LoginSignUp extends Component {
         {this.state.resp.length > 0
         ?
         <div>
-          <h1>Login or Sign Up Here!</h1>
+        <div><h1>Login or Sign Up Here!</h1></div>
+        <div className="logSignMainContainer">
           <LoginForm resp={this.state.resp}/>
+          <SignUpForm />
+        </div>
         </div>
         :<div>Loading</div>}
       </div>
