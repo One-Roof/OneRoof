@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import OneMessage from './OneMessage';
-import '../../Styles/PostList.css';
+import '../../Styles/MessageList.css';
 
 
 class MessageList extends Component {
@@ -25,9 +25,10 @@ class MessageList extends Component {
 
   render() {
     return (
-      <div className="">
-        <form>
-          <label>
+      <div className="messageMainContainer">
+        <div className="messageFormContainer">
+        <form >
+          <label className="titleBlock">
             Title:
             <input className="titleTextBox"type="text" name="name"/>
           </label>
@@ -39,16 +40,19 @@ class MessageList extends Component {
           <br/>
           <input type="Submit" value="Submit"/>
         </form>
+        </div>
+        <div className="messageListContainer">
         <div className="">
+          <button type="submit">
+            Refresh
+          </button>
           <h2>Recent Posts:</h2>
         </div>
-        <button type="submit">
-          Refresh
-        </button>
         <div>
           <OneMessage
             messageList={this.state.messageList}
             />
+        </div>
         </div>
       </div>
     );
