@@ -25,7 +25,8 @@ class LoginSignUp extends Component {
           this.setState ({
             resp: resp
           })
-          console.log(this.state.resp)
+          console.log("this.state.resp" + this.state.resp)
+          console.log(resp)
 
         })
     }
@@ -46,6 +47,7 @@ class LoginSignUp extends Component {
 
   render() {
     console.log(this.state.resp)
+    let resp = this.state.resp
     return (
       <div className="">
         {this.state.resp.length > 0
@@ -53,7 +55,7 @@ class LoginSignUp extends Component {
         <div>
         <div><h1>Login or Sign Up Here!</h1></div>
         <div className="logSignMainContainer">
-          <LoginForm resp={this.state.resp}/>
+          <LoginForm resp={resp}/>
           <SignUpForm />
         </div>
         </div>
