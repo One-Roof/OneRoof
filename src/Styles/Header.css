@@ -1,0 +1,11 @@
+.headerContainer {
+display: flex;
+justify-content: space-between;
+border-bottom: 1px solid black;
+margin-bottom: 10px;
+}
+
+.headerContainer a {
+  margin: 5px;
+  text-decoration: none;
+}

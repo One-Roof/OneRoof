@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Redirect, Refresh } from 'react-router'
+import '../Styles/LoginSignUp.css'
 
 class LoginForm extends Component {
 
@@ -41,7 +42,7 @@ class LoginForm extends Component {
   render() {
 
     return (
-      <div>
+      <div className="loginContainer">
         <form onSubmit={this.handleFormSubmit}>
             <h1>Login</h1>
           <label>

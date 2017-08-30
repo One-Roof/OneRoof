@@ -1,0 +1,18 @@
+.logSignMainContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+
+.loginContainer {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+  width: 25vw;
+}
+.signUpContainer {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+  width: 25vw;
+}

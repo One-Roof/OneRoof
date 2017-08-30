@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import '../Styles/LoginSignUp.css'
 
 class SignUpForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="signUpContainer">
         <form>
            <h1>Sign-up</h1>
           <label>
