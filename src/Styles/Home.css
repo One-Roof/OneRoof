@@ -3,15 +3,14 @@
 }
 
 .App-header {
-  background-color: #222;
-
   padding: 20px;
-  color: white;
+
 }
 
 .homeMainContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  height: 30vw;
 }
 
 .homeMainContainer h4 {

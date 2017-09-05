@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Route, Redirect, Refresh } from 'react-router'
+<<<<<<< HEAD:src/Components/LoginForm.jsx
 import '../Styles/LoginSignUp.css'
+=======
+import '../../Styles/LoginSignUp.css'
+>>>>>>> origin:src/Components/LoginSignUp/LoginForm.jsx
 
 class LoginForm extends Component {
 
