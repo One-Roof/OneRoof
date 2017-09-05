@@ -4,16 +4,17 @@ import '../Styles/LoginSignUp.css'
 
 class LoginForm extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       email: '',
       lastName: '',
     }
-    console.log(this.props)
+    console.log(this.props.resp)
 
     this.handleEmailChange = this.handleEmailChange.bind(this)
     this.handleLastNameChange = this.handleLastNameChange.bind(this)
+    this.handleFormSubmit = this.handleFormSubmit.bind(this)
   }
 
   handleEmailChange = (event) => {
@@ -26,17 +27,22 @@ class LoginForm extends Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
+    console.log(this.props.resp)
+    console.log(this.state.email)
+    console.log(this.state.lastName)
+    let userArray = this.props.resp.filter(credential => {
+      console.log(credential.email)
+      console.log(credential.lastName)
+      return (credential.email == this.state.email) })
+      console.log(userArray)
+    if (userArray == true) {
 
-
-    let userArray = this.props.resp.map(credential => {
-      if (credential.email === this.state.email && credential.lastName === this.state.lastName) {
-        <Redirect to='/home' />
-      }
-      else {
+        <Redirect to='/home'/>
+        console.log("success")
+    } else {
         console.log("login error")
-      }
+    }
 
-    })
 }
 
   render() {
