@@ -1,11 +1,15 @@
 .headerContainer {
 display: flex;
 justify-content: space-between;
+align-items: center;
 border-bottom: 1px solid black;
 margin-bottom: 10px;
+background-color: #004E64;
+height: 3vw;
 }
 
 .headerContainer a {
   margin: 5px;
   text-decoration: none;
+  color: white;
 }

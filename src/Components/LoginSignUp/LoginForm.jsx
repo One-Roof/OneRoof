@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Redirect, Refresh } from 'react-router'
-import '../Styles/LoginSignUp.css'
+import '../../Styles/LoginSignUp.css'
 
 class LoginForm extends Component {
 
