@@ -5,8 +5,8 @@ import SignUpForm from './SignUpForm';
 import '../Styles/LoginSignUp.css'
 
 class LoginSignUp extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       email: '',
       lastName: '',
@@ -47,7 +47,6 @@ class LoginSignUp extends Component {
 
   render() {
     console.log(this.state.resp)
-    let resp = this.state.resp
     return (
       <div className="">
         {this.state.resp.length > 0
@@ -55,7 +54,7 @@ class LoginSignUp extends Component {
         <div>
         <div><h1>Login or Sign Up Here!</h1></div>
         <div className="logSignMainContainer">
-          <LoginForm resp={resp}/>
+          <LoginForm resp={this.state.resp}/>
           <SignUpForm />
         </div>
         </div>
