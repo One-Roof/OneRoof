@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
+import '../../Styles/MessageList.css';
 
 class OneMessage extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
-    let oneMessage = (message => {
+    let oneMessage = this.props.messageList.map(message => {
       return (
-        <div className="">
+        <div className="oneMessageContainer" key={message.id}>
           <div className="">
-            <p>User</p>
+            <p>User:</p>
           </div>
           <div>
-            <p>Message Content</p>
+            <p className="oneMessageContent">{message.content}</p>
           </div>
         </div>
       );
@@ -23,33 +27,3 @@ class OneMessage extends Component {
 }
 
 export default OneMessage;
-
-
-//Test//
-
-// class OneMessage extends Component {
-//   constructor(props) {
-//     super(props);
-//   }
-//   render() {
-//     let oneMessage = this.props.messageList.results.map(message => {
-//       return (
-//         <div className="" key={message.id}>
-//           <div className="">
-//             <p>User</p>
-//           </div>
-//           <div>
-//             <p>Message Content: {message.content}</p>
-//           </div>
-//         </div>
-//       );
-//     })
-//     return (
-//       <div>
-//         {oneMessage}
-//       </div>
-//     )
-//   }
-// }
-//
-// export default OneMessage;

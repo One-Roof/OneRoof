@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #222;
+
+  padding: 20px;
+  color: white;
+}
+
+.homeMainContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.homeMainContainer h4 {
+  text-decoration: underline;
+}
+
+.upcomingEventsContainer {
+  width: 30vw;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+}
+
+.recentMessagesContainer {
+  width: 30vw;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 10px;
+}
