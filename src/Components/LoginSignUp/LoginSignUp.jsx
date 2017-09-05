@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Redirect, Refresh } from 'react-router'
 import LoginForm from './LoginForm';
 import SignUpForm from './SignUpForm';
-import '../Styles/LoginSignUp.css'
+import '../../Styles/LoginSignUp.css'
 
 class LoginSignUp extends Component {
   constructor(props) {
@@ -51,7 +51,7 @@ class LoginSignUp extends Component {
       <div className="">
         {this.state.resp.length > 0
         ?
-        <div>
+        <div className="loginSignUpBody">
         <div><h1>Login or Sign Up Here!</h1></div>
         <div className="logSignMainContainer">
           <LoginForm resp={this.state.resp}/>
