@@ -8,10 +8,16 @@ class MessageList extends Component {
     super(props);
     this.state = {
       messageList: [],
+      messageContent: '',
     };
+
+    this.handleMessageChange = this.handleMessageChange.bind(this)
+    this.handleFormSubmit = this.handleFormSubmit.bind(this)
+
   }
 
   componentDidMount() {
+    console.log(this.state.messageContent)
     console.log("message fetched");
     fetch("https://thawing-wave-85503.herokuapp.com/api/messages")
       .then(results => results.json())
@@ -23,17 +29,51 @@ class MessageList extends Component {
       })
   }
 
+  handleMessageChange = (event) => {
+    this.setState({messageContent: event.target.value})
+    console.log(this.state.messageContent)
+  }
+
+  handleFormSubmit(e) {
+    e.preventDefault();
+    console.log(this.state.messageContent)
+    let addMessage = {
+      "content" : this.state.messageContent,
+      "date" : "2017-08-27T00:00:00.000+0000",
+    }
+    console.log(JSON.stringify(addMessage))
+    fetch(`https://thawing-wave-85503.herokuapp.com/api/messages`, {
+          method: 'POST',
+    	    headers: new Headers({
+            'Authorization': 'Basic ',
+            'Content-Type': 'application/json'
+          }),
+          body: JSON.stringify(addMessage)
+        })
+  }
+
   render() {
     return (
       <div className="messageMainContainer">
         <div>
         <div className="messageFormContainer">
-        <form >
+
+        <form onSubmit={this.handleFormSubmit}>
+
           <label>
-            <input className="messageTextBox" type="text" placeholder="What's on your mind?"/>
+
+            <input
+              className="messageTextBox"
+              type="text"
+              onChange={this.handleMessageChange}
+              value={this.state.messageContent}  placeholder="What's on your mind?"/>
+
           </label>
+
           <input className="submitButton" type="Submit" value="Submit"/>
+
         </form>
+
         </div>
         <div className="messageListContainer">
         <div className="messageHeader">
