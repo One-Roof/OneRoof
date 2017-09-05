@@ -26,33 +26,40 @@ class MessageList extends Component {
   render() {
     return (
       <div className="messageMainContainer">
+        <div>
         <div className="messageFormContainer">
         <form >
-          <label className="titleBlock">
-            Title:
-            <input className="titleTextBox"type="text" name="name"/>
-          </label>
-          <br/>
           <label>
-            Message:
-            <input className="messageTextBox" type="text" />
+            <input className="messageTextBox" type="text" placeholder="What's on your mind?"/>
           </label>
-          <br/>
-          <input type="Submit" value="Submit"/>
+          <input className="submitButton" type="Submit" value="Submit"/>
         </form>
         </div>
         <div className="messageListContainer">
-        <div className="">
-          <button type="submit">
-            Refresh
-          </button>
+        <div className="messageHeader">
+          <div>
           <h2>Recent Posts:</h2>
+          </div>
+          <div className="refreshButtonContainer">
+            <button type="submit" className="refreshButton">
+              Refresh
+            </button>
+            </div>
         </div>
         <div>
           <OneMessage
             messageList={this.state.messageList}
             />
         </div>
+        </div>
+        </div>
+        <div className="userBio">
+          <div className="profilePicture">
+          </div>
+          <div>
+            User: Matt McDonald
+          </div>
+
         </div>
       </div>
     );
