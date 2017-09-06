@@ -34,6 +34,10 @@
   outline: none;
   font-family: 'Raleway';
 }
+.submitButton:hover {
+  background-color: #004E64;
+  color: white;
+}
 .messageHeader {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -53,6 +57,11 @@
   background-color: white;
   color: #004E64;
   font-family: 'Raleway';
+}
+
+.refreshButton:hover {
+  background-color: #004E64;
+  color: white;
 }
 
 .oneMessageContainer {

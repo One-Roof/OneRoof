@@ -48,3 +48,31 @@
 .signupTitle {
   margin-left: 60%;
 }
+
+.signUpSubmitButton {
+  font-size: 16px;
+  border-radius: 5px;
+  border: thin solid #004E64;
+  background-color: white;
+  color: #004E64;
+  outline: none;
+  font-family: 'Raleway';
+}
+.signUpSubmitButton:hover {
+  background-color: #004E64;
+  color: white;
+}
+
+.loginSubmitButton {
+  font-size: 16px;
+  border-radius: 5px;
+  border: thin solid #004E64;
+  background-color: white;
+  color: #004E64;
+  outline: none;
+  font-family: 'Raleway';
+}
+.loginSubmitButton:hover {
+  background-color: #004E64;
+  color: white;
+}
