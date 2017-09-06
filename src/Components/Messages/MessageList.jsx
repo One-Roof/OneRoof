@@ -45,7 +45,7 @@ class MessageList extends Component {
     fetch(`https://thawing-wave-85503.herokuapp.com/api/messages`, {
           method: 'POST',
     	    headers: new Headers({
-            'Authorization': 'Basic ',
+            'Authorization': 'Basic',
             'Content-Type': 'application/json'
           }),
           body: JSON.stringify(addMessage)
