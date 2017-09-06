@@ -15,21 +15,21 @@ class LoginSignUp extends Component {
     }
   };
 
-    componentDidMount() {
-      fetch("https://thawing-wave-85503.herokuapp.com/api/familyMembers")
-        .then(results => results.json())
-        .then(response =>{
-          let resp = response._embedded.familyMembers
-          console.log(resp)
-          console.log(this.state)
-          this.setState ({
-            resp: resp
-          })
-          console.log("this.state.resp" + this.state.resp)
-          console.log(resp)
-
-        })
-    }
+    // componentDidMount() {
+    //   fetch("https://thawing-wave-85503.herokuapp.com/api/familyMembers")
+    //     .then(results => results.json())
+    //     .then(response =>{
+    //       let resp = response._embedded.familyMembers
+    //       console.log(resp)
+    //       console.log(this.state)
+    //       this.setState ({
+    //         resp: resp
+    //       })
+    //       console.log("this.state.resp" + this.state.resp)
+    //       console.log(resp)
+    //
+    //     })
+    // }
 
     // shouldComponentUpdate(nextState) {
     //   if(this.state.email !== this.nextState.email && this.state.lastName !== this.nextState.lastName)
@@ -49,8 +49,7 @@ class LoginSignUp extends Component {
     console.log(this.state.resp)
     return (
       <div className="">
-        {this.state.resp.length > 0
-        ?
+
         <div className="loginSignUpBody">
         <div><h1 className="loginSignupBanner">Finally, Bringing the family together under one roof!</h1></div>
         <div className="logSignMainContainer">
@@ -58,7 +57,7 @@ class LoginSignUp extends Component {
           <SignUpForm />
         </div>
         </div>
-        :<div>Loading</div>}
+
       </div>
     );
   }

@@ -6,13 +6,13 @@ class Header extends Component {
     return (
       <div className="headerContainer">
         <div className="headerLeft">
-          <a href="/messagelist">Messages</a>
-          <a href="/calendar">Calendar</a>
-          <a href="/home">Home</a>
+          <a className="headerLink" href="/messagelist">Messages</a>
+          <a className="headerLink" href="/calendar">Calendar</a>
+          <a className="headerLink" href="/home">Home</a>
         </div>
         <div className="headerRight">
-          <a href="/">Log In</a>
-          <a href="/">Sign Up</a>
+          <a className="headerLink" href="/">Log In</a>
+          <a className="headerLink" href="/">Sign Up</a>
         </div>
       </div>
     )

@@ -4,17 +4,21 @@
 
 .App-header {
   padding: 20px;
-
+  font-family: 'Raleway';
+  font-size: 20px;
 }
 
 .homeMainContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 30vw;
+  justify-items: center;
+  font-family: 'Raleway';
 }
 
 .homeMainContainer h4 {
   text-decoration: underline;
+  font-family: 'Raleway';
 }
 
 .upcomingEventsContainer {
@@ -22,6 +26,7 @@
   border: 1px solid black;
   margin: 10px;
   padding: 10px;
+  border-radius: 5px;
 }
 
 .recentMessagesContainer {
@@ -29,4 +34,5 @@
   border: 1px solid black;
   margin: 10px;
   padding: 10px;
+  border-radius: 5px;
 }
