@@ -37,19 +37,19 @@ class LoginForm extends Component {
 
     var form = new FormData()
 
-  form.append('username', this.state.email),
-  form.append('password', this.state.lastName)
-  console.log(form)
+    form.append('username', this.state.email),
+    form.append('password', this.state.lastName)
+    console.log(form)
 
-  console.log(this.state.email)
-  return fetch('https://thawing-wave-85503.herokuapp.com/login', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
-      'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
-    },
-    body: form,
-  })
+    console.log(this.state.email)
+    return fetch('https://thawing-wave-85503.herokuapp.com/login', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
+        'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+      },
+      body: form,
+    })
     .then(function(response) {
       console.log(form)
       console.log(response)
