@@ -6,29 +6,29 @@ class SignUpForm extends Component {
   render() {
     return (
       <div className="signUpContainer">
-        <form>
-           <h1>Sign-up</h1>
-          <label>
+        <h1 className="signupTitle">Sign-up</h1>
+        <form className="signupForm">
+          <label className="signupLabel">
             Family Name:
-          <input type="text" name="familyname" />
+          <input  className="familyName" type="text" name="familyname" />
         </label><br />
-          <label>
+          <label className="signupLabel">
             Name:
           <input type="text" name="name" />
         </label><br />
-          <label>
+          <label className="signupLabel">
             Email:
           <input type="email" name="email" />
         </label><br />
-          <label>
+          <label className="signupLabel">
             Age:
           <input type="number" name="age" />
         </label><br />
-          <label>
+          <label className="signupLabel">
             Password:
           <input type="password" name="psw" />
         </label><br />
-          <label>
+          <label className="signupLabel">
             Confirm Password:
           <input type="password" name="psw" />
         </label><br/>
