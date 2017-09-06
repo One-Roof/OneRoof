@@ -53,17 +53,17 @@ class LoginForm extends Component {
 
     return (
       <div className="loginContainer">
-        <form onSubmit={this.handleFormSubmit}>
-            <h1>Login</h1>
-          <label>
-            Email:
-          <input type={"text"}
+        <h1 className="loginTitle">Login</h1>
+        <form  className="loginForm" onSubmit={this.handleFormSubmit}>
+          <label className="emailLabel">
+           Email:
+          <input className="emailbox" type={"text"}
             value={this.state.email}
             onChange={this.handleEmailChange}/>
         </label><br />
-          <label>
+          <label className="nameLabel">
             Last Name:
-          <input type={"text"}
+          <input className="namebox" type={"text"}
             value={this.state.lastName}
             onChange={this.handleLastNameChange}
              />

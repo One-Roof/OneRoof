@@ -5,17 +5,46 @@
 }
 
 .loginContainer {
-  border: 1px solid black;
-  margin: 5px;
+  /*border: 1px solid black;*/
+  margin: 5px 5px 5px 30%;
   padding: 5px;
   width: 25vw;
 }
+
 .signUpContainer {
-  border: 1px solid black;
-  margin: 5px;
+  /*border: 1px solid black;*/
+  margin: 5px 55% 5px 5px;
   padding: 5px;
   width: 25vw;
 }
+
 .loginSignUpBody {
   height: 35vw;
+  font-family: 'Roboto', sans-serif;
+}
+
+.loginSignupBanner {
+  text-align: center;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.loginTitle {
+  margin-left: 65%;
+}
+
+.signupTitle {
+  margin-left: 60%;
 }
