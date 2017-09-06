@@ -4,6 +4,7 @@
   justify-items: center;
   height: 40vw;
   margin: auto;
+  font-family: 'Raleway';
 }
 .messageFormContainer {
   padding: 10px;
@@ -22,6 +23,7 @@
   font-size: 18px;
   margin-right: 10px;
   outline: none;
+  font-family: 'Raleway';
 }
 .submitButton {
   font-size: 16px;
@@ -30,6 +32,7 @@
   background-color: white;
   color: #004E64;
   outline: none;
+  font-family: 'Raleway';
 }
 .messageHeader {
   display: grid;
@@ -49,6 +52,7 @@
   border: thin solid #004E64;
   background-color: white;
   color: #004E64;
+  font-family: 'Raleway';
 }
 
 .oneMessageContainer {

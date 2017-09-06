@@ -10,7 +10,7 @@ BigCalendar.momentLocalizer(moment);
 let allViews = Object.keys(BigCalendar.views).map(k => BigCalendar.views[k])
 
 const Calendar = props => (
-  <div>
+  <div className="calendarMainContainer">
     <BigCalendar
       events={events}
       views={allViews}
