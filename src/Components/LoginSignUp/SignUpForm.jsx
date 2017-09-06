@@ -32,7 +32,7 @@ class SignUpForm extends Component {
             Confirm Password:
           <input type="password" name="psw" />
         </label><br/>
-          <input type="submit" value="Submit" />
+      <input className="signUpSubmitButton" type="submit" value="Submit" />
         </form>
       </div>
     )
