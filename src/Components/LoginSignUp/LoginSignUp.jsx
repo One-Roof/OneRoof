@@ -52,7 +52,7 @@ class LoginSignUp extends Component {
         {this.state.resp.length > 0
         ?
         <div className="loginSignUpBody">
-        <div><h1>Login or Sign Up Here!</h1></div>
+        <div><h1 className="loginSignupBanner">Finally, Bringing the family together under one roof!</h1></div>
         <div className="logSignMainContainer">
           <LoginForm resp={this.state.resp}/>
           <SignUpForm />
