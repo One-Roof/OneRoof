@@ -6,10 +6,15 @@ border-bottom: 1px solid black;
 margin-bottom: 10px;
 background-color: #004E64;
 height: 3vw;
+font-family: 'Raleway';
 }
 
-.headerContainer a {
+.headerLink{
   margin: 5px;
   text-decoration: none;
   color: white;
+}
+
+.headerLink:hover {
+  text-decoration: underline;
 }

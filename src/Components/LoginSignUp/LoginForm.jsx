@@ -31,26 +31,53 @@ class LoginForm extends Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
-    console.log(this.props.resp)
+    // console.log(this.props.resp)
     console.log(this.state.email)
     console.log(this.state.lastName)
-    let userArray = this.props.resp.filter(credential => {
-      console.log(credential.email)
-      console.log(credential.lastName)
-      return (credential.email == this.state.email) })
-      console.log(userArray)
-    if (userArray == true) {
 
-        <Redirect to='/home'/>
-        console.log("success")
-    } else {
-        console.log("login error")
-    }
+    var form = new FormData()
 
-}
+  form.append('username', this.state.email),
+  form.append('password', this.state.lastName)
+  console.log(form)
+
+  console.log(this.state.email)
+  return fetch('https://thawing-wave-85503.herokuapp.com/login', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
+      'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+    },
+    body: form,
+  })
+    .then(function(response) {
+      console.log(form)
+      console.log(response)
+      if (response.status === 200) {
+        <div>
+          <Redirect to='/home'></Redirect>
+          </div>
+          console.log("success")
+      } else {
+          console.log("login error")
+      }
+    });
+  }
+    //
+    // let userArray = this.props.resp.filter(credential => {
+    //   // console.log(credential.email)
+    //   // console.log(credential.lastName)
+    //   return (credential.email == this.state.email) })
+    //   console.log(userArray)
+    // if (userArray == true) {
+    //
+    //     <Redirect to='/home'/>
+    //     console.log("success")
+    // } else {
+    //     console.log("login error")
+    // }
 
   render() {
-
     return (
       <div className="loginContainer">
         <h1 className="loginTitle">Login</h1>
