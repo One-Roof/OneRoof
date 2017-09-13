@@ -41,28 +41,31 @@ class LoginForm extends Component {
   form.append('password', this.state.lastName)
   console.log(form)
 
+
+// https://thawing-wave-85503.herokuapp.com/login
+
+//WE WERE USING THE ABOVE LINK ORIGINALLY TO FETCH FROM THE BACKEND, THE LINK BELOW WAS FOR A DIRECT CONNECT TO OUR TEAM MEMBERS COMPUTER
+
   console.log(this.state.email)
-  return fetch('https://thawing-wave-85503.herokuapp.com/login', {
+  return fetch('http://10.253.100.173:8080/login', {
     method: 'POST',
     headers: {
-      'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
-      'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
-    },
-    body: form,
+      'Authorization': 'Basic ' + window.btoa(this.state.email + ":" + this.state.lastName)
+    }
   })
     .then(function(response) {
-      console.log(form)
       console.log(response)
       if (response.status === 200) {
-        <div>
+
           <Redirect to='/home'></Redirect>
-          </div>
           console.log("success")
       } else {
           console.log("login error")
       }
     });
   }
+  // 'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
+  // 'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
     //
     // let userArray = this.props.resp.filter(credential => {
     //   // console.log(credential.email)
