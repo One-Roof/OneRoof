@@ -4,9 +4,11 @@ import '../../Styles/MessageList.css';
 class OneMessage extends Component {
   constructor(props) {
     super(props);
+
   }
   render() {
     let oneMessage = this.props.messageList.map(message => {
+
       return (
         <div className="oneMessageContainer" key={message.id}>
           <div className="">
@@ -14,6 +16,9 @@ class OneMessage extends Component {
           </div>
           <div>
             <p className="oneMessageContent">{message.content}</p>
+            <p>{message.date}</p>
+            <a href="#" onClick = {this.props.handleDelete.bind(null, message)}>[X]</a>
+
           </div>
         </div>
       );

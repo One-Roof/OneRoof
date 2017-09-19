@@ -29,6 +29,46 @@ class MessageList extends Component {
       })
   }
 
+  //DELETE*********************
+// 
+//   handleOnclick(id,content,date) {
+//
+//
+//      this.setState({
+//         content: content,
+//         date: date,
+//       });
+//       }
+//
+//   handleDelete(id) {
+//     fetch ('https://thawing-wave-85503.herokuapp.com/api/messages/'+ id,
+//     { method: 'DELETE',})
+//     .then(
+//         res =>  this.setState({jsonReturnedValue : json})
+//     )
+//     .catch( err => console.error(err))
+// }
+  // handleOnclick(id,name,address) {
+  //
+  //
+  //    this.setState({
+  //       Employee_Name: name,
+  //       Address: address,
+  //     });
+  //     }
+  //
+  //   deleteEmployee(id) {
+  //       debugger
+  //         fetch ('http://localhost:5118/api/employeedetails/deleteemployeedetail/'+ id,
+  //         { method: 'DELETE',})
+  //         .then(
+  //             res =>  this.setState({jsonReturnedValue : json})
+  //         )
+  //         .catch( err => console.error(err))
+  //     }
+
+
+  //MESSAGE POSTING***************
   handleMessageChange = (event) => {
     this.setState({messageContent: event.target.value})
     console.log(this.state.messageContent)
@@ -37,12 +77,16 @@ class MessageList extends Component {
   handleFormSubmit(e) {
     e.preventDefault();
     console.log(this.state.messageContent)
+
+    let today = new Date()
     let addMessage = {
       "content" : this.state.messageContent,
-      "date" : "2017-08-27T00:00:00.000+0000",
+      "date" : today,
+      "userId" : 1
     }
     console.log(JSON.stringify(addMessage))
-    fetch(`https://thawing-wave-85503.herokuapp.com/api/messages`, {
+
+    fetch("https://thawing-wave-85503.herokuapp.com/api/messages", {
           method: 'POST',
     	    headers: new Headers({
             'Authorization': 'Basic',
@@ -88,6 +132,7 @@ class MessageList extends Component {
         </div>
         <div>
           <OneMessage
+            handleDelete = {this.handleDelete.bind(this)}
             messageList={this.state.messageList}
             />
         </div>

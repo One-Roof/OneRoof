@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Redirect, Refresh } from 'react-router'
+import { Route, Redirect, Refresh } from 'react-router-dom'
 
 import '../../Styles/LoginSignUp.css'
 
@@ -13,6 +13,7 @@ class LoginForm extends Component {
     this.state = {
       email: '',
       lastName: '',
+      loginSuccess: false
     }
     console.log(this.props.resp)
 
@@ -41,46 +42,33 @@ class LoginForm extends Component {
   form.append('password', this.state.lastName)
   console.log(form)
 
-
-// https://thawing-wave-85503.herokuapp.com/login
-
-//WE WERE USING THE ABOVE LINK ORIGINALLY TO FETCH FROM THE BACKEND, THE LINK BELOW WAS FOR A DIRECT CONNECT TO OUR TEAM MEMBERS COMPUTER
-
   console.log(this.state.email)
-  return fetch('http://10.253.100.173:8080/login', {
+  return fetch('https://thawing-wave-85503.herokuapp.com/login', {
     method: 'POST',
     headers: {
+      'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
+      'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
       'Authorization': 'Basic ' + window.btoa(this.state.email + ":" + this.state.lastName)
     }
   })
-    .then(function(response) {
+    .then((function(response) {
       console.log(response)
       if (response.status === 200) {
-
-          <Redirect to='/home'></Redirect>
+          this.setState({loginSuccess: true})
           console.log("success")
       } else {
           console.log("login error")
       }
-    });
+    }).bind(this));
   }
-  // 'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
-  // 'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-    //
-    // let userArray = this.props.resp.filter(credential => {
-    //   // console.log(credential.email)
-    //   // console.log(credential.lastName)
-    //   return (credential.email == this.state.email) })
-    //   console.log(userArray)
-    // if (userArray == true) {
-    //
-    //     <Redirect to='/home'/>
-    //     console.log("success")
-    // } else {
-    //     console.log("login error")
-    // }
 
   render() {
+    if (this.state.loginSuccess) {
+      return (
+        <Redirect to='/home' />
+      )
+    }
+
     return (
       <div className="loginContainer">
         <h1 className="loginTitle">Login</h1>
