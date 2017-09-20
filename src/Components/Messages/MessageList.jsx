@@ -30,7 +30,7 @@ class MessageList extends Component {
   }
 
   //DELETE*********************
-// 
+//
 //   handleOnclick(id,content,date) {
 //
 //
@@ -132,7 +132,7 @@ class MessageList extends Component {
         </div>
         <div>
           <OneMessage
-            handleDelete = {this.handleDelete.bind(this)}
+
             messageList={this.state.messageList}
             />
         </div>
@@ -150,5 +150,7 @@ class MessageList extends Component {
     );
   }
 }
+
+// handleDelete = {this.handleDelete.bind(this)}
 
 export default MessageList;

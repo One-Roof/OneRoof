@@ -17,7 +17,7 @@ class OneMessage extends Component {
           <div>
             <p className="oneMessageContent">{message.content}</p>
             <p>{message.date}</p>
-            <a href="#" onClick = {this.props.handleDelete.bind(null, message)}>[X]</a>
+            <a href="#">[X]</a>
 
           </div>
         </div>
@@ -30,5 +30,7 @@ class OneMessage extends Component {
     )
   }
 }
+
+// onClick = {this.props.handleDelete.bind(null, message)}
 
 export default OneMessage;

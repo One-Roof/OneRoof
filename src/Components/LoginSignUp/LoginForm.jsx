@@ -12,13 +12,13 @@ class LoginForm extends Component {
     super(props);
     this.state = {
       email: '',
-      lastName: '',
+      password: '',
       loginSuccess: false
     }
     console.log(this.props.resp)
 
     this.handleEmailChange = this.handleEmailChange.bind(this)
-    this.handleLastNameChange = this.handleLastNameChange.bind(this)
+    this.handlepasswordChange = this.handlepasswordChange.bind(this)
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
   }
 
@@ -26,20 +26,20 @@ class LoginForm extends Component {
   this.setState({ email: event.target.value });
 };
 
-  handleLastNameChange = (event) => {
-  this.setState({ lastName: event.target.value });
+  handlepasswordChange = (event) => {
+  this.setState({ password: event.target.value });
 };
 
   handleFormSubmit(e) {
     e.preventDefault();
     // console.log(this.props.resp)
     console.log(this.state.email)
-    console.log(this.state.lastName)
+    console.log(this.state.password)
 
     var form = new FormData()
 
   form.append('username', this.state.email),
-  form.append('password', this.state.lastName)
+  form.append('password', this.state.password)
   console.log(form)
 
   console.log(this.state.email)
@@ -48,7 +48,7 @@ class LoginForm extends Component {
     headers: {
       'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
       'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-      'Authorization': 'Basic ' + window.btoa(this.state.email + ":" + this.state.lastName)
+      'Authorization': 'Basic ' + window.btoa(this.state.email + ":" + this.state.password)
     }
   })
     .then((function(response) {
@@ -80,10 +80,10 @@ class LoginForm extends Component {
             onChange={this.handleEmailChange}/>
         </label><br />
           <label className="nameLabel">
-            Last Name:
+            Password:
           <input className="namebox" type={"text"}
-            value={this.state.lastName}
-            onChange={this.handleLastNameChange}
+            value={this.state.password}
+            onChange={this.handlepasswordChange}
              />
         </label><br />
       <input className="loginSubmitButton" type="submit" value="Submit" />
