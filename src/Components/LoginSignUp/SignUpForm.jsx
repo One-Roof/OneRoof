@@ -9,13 +9,20 @@ class SignUpForm extends Component {
         <h1 className="signupTitle">Sign-up</h1>
         <form className="signupForm">
           <label className="signupLabel">
-            Family Name:
-          <input  className="familyName" type="text" name="familyname" />
-        </label><br />
-          <label className="signupLabel">
             Name:
           <input type="text" name="name" />
-        </label><br />
+        </label>
+          <br />
+            <label className="signupLabel">
+              Family Name:
+            <input  className="familyName" type="text" name="familyname" />
+          </label>
+          <br />
+            <label className="signupLabel">
+              Username:
+            <input  className="userName" type="text" name="userName" />
+          </label>
+          <br />
           <label className="signupLabel">
             Email:
           <input type="email" name="email" />

@@ -34,6 +34,22 @@ class MessageList extends Component {
       })
   }
 
+  // componentDidUpdate() {
+  //
+  //     fetch("https://thawing-wave-85503.herokuapp.com/api/messages", {
+  //       credentials:'include',
+  //     })
+  //       .then(results => results.json())
+  //       .then(response => {
+  //         let messageList = response._embedded.messages
+  //         this.setState({
+  //           messageList: messageList
+  //         })
+  //       })
+  //   }
+
+
+
   //DELETE*********************
 //
 //   handleOnDeleteClick(id,content,date) {
@@ -78,6 +94,8 @@ class MessageList extends Component {
     console.log(this.state.messageContent)
   }
 
+
+
   handleFormSubmit(e) {
     e.preventDefault();
     console.log(this.state.messageContent)
@@ -100,6 +118,8 @@ class MessageList extends Component {
           credentials:'include',
           body: JSON.stringify(addMessage)
         })
+
+
   }
 
   render() {
