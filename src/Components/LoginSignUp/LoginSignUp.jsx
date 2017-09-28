@@ -17,20 +17,24 @@ class LoginSignUp extends Component {
     }
   };
 
-  // //Grabbing the token
-  //
-  // componentWillMount() {
-  //     this.setState({token: cookie.load('token')});
-  //   }
-  //
-  // setToken(token) {
-  //     this.setState({token: token});
-  //     cookie.save('token', token);
-  //   }
+  //Grabbing the token
 
+  componentWillMount() {
+
+      this.setState({token: cookie.load('token')});
+      console.log(this.state.token);
+    }
+
+  setToken(token) {
+      this.setState({token: token});
+
+      cookie.save('token', token);
+  console.log(this.state.token);
+    }
 
 
   render() {
+
     console.log(this.state.resp)
     return (
       <div className="">
@@ -38,7 +42,8 @@ class LoginSignUp extends Component {
         <div className="loginSignUpBody">
         <div><h1 className="loginSignupBanner">Finally, Bringing the family together under one roof!</h1></div>
         <div className="logSignMainContainer">
-          <LoginForm resp={this.state.resp}/>
+          <LoginForm resp={this.state.resp}
+            setToken={this.setToken.bind(this)}/>
           <SignUpForm />
         </div>
         </div>

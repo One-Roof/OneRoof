@@ -13,7 +13,8 @@ class LoginForm extends Component {
     this.state = {
       email: '',
       password: '',
-      loginSuccess: false
+      loginSuccess: false,
+      token: '',
     }
     console.log(this.props.resp)
 
@@ -31,10 +32,12 @@ class LoginForm extends Component {
 };
 
   handleFormSubmit(e) {
+    let setToken = this.props.setToken;
     e.preventDefault();
-    // console.log(this.props.resp)
-    console.log(this.state.email)
-    console.log(this.state.password)
+
+
+    console.log(setToken);
+
 
     var form = new FormData()
 

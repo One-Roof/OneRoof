@@ -81,6 +81,7 @@ class MessageList extends Component {
   handleFormSubmit(e) {
     e.preventDefault();
     console.log(this.state.messageContent)
+    // console.log(JSESSIONID)
 
     let today = new Date()
     let addMessage = {

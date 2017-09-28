@@ -9,7 +9,7 @@ class RecentMessage extends Component {
 
   render() {
     let recentMessage = this.props.messageList.map(message => {
-console.log(message._links.self.href)
+
       return (
 
         <div className="recentMessageContainer" key={message._links.self.href}>

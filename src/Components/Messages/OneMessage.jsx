@@ -10,7 +10,7 @@ class OneMessage extends Component {
     let oneMessage = this.props.messageList.map(message => {
 
       return (
-        <div className="oneMessageContainer" key={message.id}>
+        <div className="oneMessageContainer" key={message._links.self.href}>
           <div className="">
             <p>User:</p>
           </div>

@@ -14,7 +14,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    console.log(this.state.messageContent)
+
     console.log("message fetched");
     fetch("https://thawing-wave-85503.herokuapp.com/api/messages", {
       credentials:'include',
