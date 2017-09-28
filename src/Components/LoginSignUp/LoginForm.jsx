@@ -48,7 +48,7 @@ class LoginForm extends Component {
     headers: {
       'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
       'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-      'Authorization': 'Basic ' + window.btoa(this.state.email + ":" + this.state.password)
+
     }
   })
     .then((function(response) {
@@ -56,6 +56,7 @@ class LoginForm extends Component {
       if (response.status === 200) {
           this.setState({loginSuccess: true})
           console.log("success")
+
       } else {
           console.log("login error")
       }
@@ -94,3 +95,5 @@ class LoginForm extends Component {
 }
 
 export default LoginForm;
+
+// 'Authorization': 'Basic ' + window.btoa(this.state.email + ":" + this.state.password)
