@@ -38,7 +38,7 @@ class LoginForm extends Component {
 
     var form = new FormData()
 
-  form.append('username', this.state.email),
+  form.append('username', this.state.email)
   form.append('password', this.state.password)
   console.log(form)
 
@@ -48,8 +48,9 @@ class LoginForm extends Component {
     headers: {
       'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
       'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-
-    }
+      'Authorization': 'Basic ' + window.btoa(this.state.email + ":" + this.state.password)
+    },
+    credentials:'include',
   })
     .then((function(response) {
       console.log(response)
@@ -95,5 +96,3 @@ class LoginForm extends Component {
 }
 
 export default LoginForm;
-
-// 'Authorization': 'Basic ' + window.btoa(this.state.email + ":" + this.state.password)

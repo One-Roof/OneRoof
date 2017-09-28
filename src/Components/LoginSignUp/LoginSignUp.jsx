@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Route, Redirect, Refresh } from 'react-router'
 import LoginForm from './LoginForm';
+import cookie from 'react-cookies';
+import request from 'superagent';
 import SignUpForm from './SignUpForm';
 import '../../Styles/LoginSignUp.css'
 
@@ -12,38 +13,22 @@ class LoginSignUp extends Component {
       lastName: '',
       submitted: false,
       resp: [],
+      token: null,
     }
   };
 
-    // componentDidMount() {
-    //   fetch("https://thawing-wave-85503.herokuapp.com/api/familyMembers")
-    //     .then(results => results.json())
-    //     .then(response =>{
-    //       let resp = response._embedded.familyMembers
-    //       console.log(resp)
-    //       console.log(this.state)
-    //       this.setState ({
-    //         resp: resp
-    //       })
-    //       console.log("this.state.resp" + this.state.resp)
-    //       console.log(resp)
-    //
-    //     })
-    // }
+  // //Grabbing the token
+  //
+  // componentWillMount() {
+  //     this.setState({token: cookie.load('token')});
+  //   }
+  //
+  // setToken(token) {
+  //     this.setState({token: token});
+  //     cookie.save('token', token);
+  //   }
 
-    // shouldComponentUpdate(nextState) {
-    //   if(this.state.email !== this.nextState.email && this.state.lastName !== this.nextState.lastName)
-    //   return true;
-    // }
 
-    // componentDidUpdate() {
-    //   if(this.state.email === this.email && this.state.lastName === this.lastName) {
-    //     <Redirect to="/home"/>
-    //   }
-    //   else {
-    //     console.log("login error")
-    //   }
-    // }
 
   render() {
     console.log(this.state.resp)

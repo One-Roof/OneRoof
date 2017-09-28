@@ -6,11 +6,13 @@ class RecentMessage extends Component {
     super(props);
 
   }
+
   render() {
     let recentMessage = this.props.messageList.map(message => {
-
+console.log(message._links.self.href)
       return (
-        <div className="recentMessageContainer" key={message.id}>
+
+        <div className="recentMessageContainer" key={message._links.self.href}>
           <div>
             <p className="recentMessageContent">{message.content}</p>
             <p>{message.date}</p>
@@ -21,12 +23,16 @@ class RecentMessage extends Component {
       );
     })
     return (
+
       <div>
         {recentMessage}
       </div>
+
     )
   }
+
 }
+
 
 // onClick = {this.props.handleDelete.bind(null, message)}
 
