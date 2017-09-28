@@ -9,6 +9,7 @@ class Home extends Component {
     this.state = {
       messageList: [],
       messageContent: '',
+      name: '',
     };
 
   }
@@ -29,12 +30,40 @@ class Home extends Component {
       })
   }
 
+  // DOUBLE fetch
+  componentDidMount() {
+
+    console.log("message fetched");
+    fetch("https://thawing-wave-85503.herokuapp.com/api/messages", {
+      credentials:'include',
+    })
+      .then(results => results.json())
+      .then(responseOne => {
+
+        fetch("https://thawing-wave-85503.herokuapp.com/something", {
+          credentials:'include',
+        })
+        .then(results => results.json())
+        .then(responseTwo => {
+          let name = responseTwo.name
+          let messageList = responseOne._embedded.messages
+          this.setState({
+            messageList: messageList,
+            name: name
+          })
+          console.log(this.state.name)
+        })
+        console.log(this.state.name)
+      })
+  }
+
+
 
   render() {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Welcome, ________</h2>
+          <h2>Welcome, {this.state.name}</h2>
         </div>
         <div className="homeMainContainer">
           <div className="upcomingEventsContainer">

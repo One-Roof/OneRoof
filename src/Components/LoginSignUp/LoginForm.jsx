@@ -11,20 +11,20 @@ class LoginForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
+      userName: '',
       password: '',
       loginSuccess: false,
       token: '',
     }
-    console.log(this.props.resp)
 
-    this.handleEmailChange = this.handleEmailChange.bind(this)
+
+    this.handleuserNameChange = this.handleuserNameChange.bind(this)
     this.handlepasswordChange = this.handlepasswordChange.bind(this)
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
   }
 
-  handleEmailChange = (event) => {
-  this.setState({ email: event.target.value });
+  handleuserNameChange = (event) => {
+  this.setState({ userName: event.target.value });
 };
 
   handlepasswordChange = (event) => {
@@ -33,28 +33,26 @@ class LoginForm extends Component {
 
   handleFormSubmit(e) {
     let setToken = this.props.setToken;
+
     e.preventDefault();
-
-
     console.log(setToken);
-
 
     var form = new FormData()
 
-  form.append('username', this.state.email)
+  form.append('username', this.state.userName)
   form.append('password', this.state.password)
   console.log(form)
 
-  console.log(this.state.email)
+  console.log(this.state.userName)
   return fetch('https://thawing-wave-85503.herokuapp.com/login', {
     method: 'POST',
     headers: {
       'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
       'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-      'Authorization': 'Basic ' + window.btoa(this.state.email + ":" + this.state.password)
+      'Authorization': 'Basic ' + window.btoa(this.state.userName + ":" + this.state.password)
     },
     credentials:'include',
-  })
+    })
     .then((function(response) {
       console.log(response)
       if (response.status === 200) {
@@ -67,7 +65,7 @@ class LoginForm extends Component {
     }).bind(this));
   }
 
-  render() {
+render() {
     if (this.state.loginSuccess) {
       return (
         <Redirect to='/home' />
@@ -78,11 +76,11 @@ class LoginForm extends Component {
       <div className="loginContainer">
         <h1 className="loginTitle">Login</h1>
         <form  className="loginForm" onSubmit={this.handleFormSubmit}>
-          <label className="emailLabel">
-           Email:
-          <input className="emailbox" type={"text"}
-            value={this.state.email}
-            onChange={this.handleEmailChange}/>
+          <label className="userNameLabel">
+           Username:
+          <input className="userNamebox" type={"text"}
+            value={this.state.userName}
+            onChange={this.handleuserNameChange}/>
         </label><br />
           <label className="nameLabel">
             Password:
