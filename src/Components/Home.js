@@ -1,27 +1,31 @@
 import React, { Component } from 'react';
 import '../Styles/Home.css';
-import OneMessage from './Messages/OneMessage';
+import RecentMessage from './Messages/RecentMessage';
 import MessageList from './Messages/MessageList.jsx';
 
 class Home extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     messageList: [],
-  //     messageContent: '',
-  //   };
-  // }
-  //
-  // componentDidMount() {
-  //   fetch("https://thawing-wave-85503.herokuapp.com/api/messages")
-  //     .then(results => results.json())
-  //     .then(response => {
-  //       let messageList = response._embedded.messages
-  //       this.setState({
-  //         messageList: messageList
-  //       })
-  //     })
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      messageList: [],
+      messageContent: '',
+    };
+
+  }
+
+  componentDidMount() {
+    console.log(this.state.messageContent)
+    console.log("message fetched");
+    fetch("https://thawing-wave-85503.herokuapp.com/api/messages")
+      .then(results => results.json())
+      .then(response => {
+        let messageList = response._embedded.messages
+        this.setState({
+          messageList: messageList
+        })
+      })
+  }
+
 
   render() {
     return (
@@ -37,8 +41,12 @@ class Home extends Component {
             </ul>
           </div>
           <div className="recentMessagesContainer">
-              <h4>Recent Messages</h4>
-                
+              <h4>Recent Messages: </h4>
+                <RecentMessage
+
+                  messageList={this.state.messageList}
+                  />
+
           </div>
         </div>
       </div>
