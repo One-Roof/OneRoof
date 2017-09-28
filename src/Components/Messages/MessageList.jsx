@@ -9,6 +9,9 @@ class MessageList extends Component {
     this.state = {
       messageList: [],
       messageContent: '',
+      id: '',
+      content: '',
+      date: '',
     };
 
     this.handleMessageChange = this.handleMessageChange.bind(this)
@@ -19,7 +22,9 @@ class MessageList extends Component {
   componentDidMount() {
     console.log(this.state.messageContent)
     console.log("message fetched");
-    fetch("https://thawing-wave-85503.herokuapp.com/api/messages")
+    fetch("https://thawing-wave-85503.herokuapp.com/api/messages", {
+      credentials:'include',
+    })
       .then(results => results.json())
       .then(response => {
         let messageList = response._embedded.messages
@@ -31,17 +36,16 @@ class MessageList extends Component {
 
   //DELETE*********************
 //
-//   handleOnclick(id,content,date) {
-//
-//
+//   handleOnDeleteClick(id,content,date) {
 //      this.setState({
+//         id: message._links.self.href,
 //         content: content,
 //         date: date,
 //       });
 //       }
 //
 //   handleDelete(id) {
-//     fetch ('https://thawing-wave-85503.herokuapp.com/api/messages/'+ id,
+//     fetch (id,
 //     { method: 'DELETE',})
 //     .then(
 //         res =>  this.setState({jsonReturnedValue : json})
@@ -77,6 +81,7 @@ class MessageList extends Component {
   handleFormSubmit(e) {
     e.preventDefault();
     console.log(this.state.messageContent)
+    // console.log(JSESSIONID)
 
     let today = new Date()
     let addMessage = {
@@ -92,6 +97,7 @@ class MessageList extends Component {
             'Authorization': 'Basic',
             'Content-Type': 'application/json'
           }),
+          credentials:'include',
           body: JSON.stringify(addMessage)
         })
   }

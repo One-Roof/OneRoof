@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Route, Redirect, Refresh } from 'react-router'
 import LoginForm from './LoginForm';
+import cookie from 'react-cookies';
+import request from 'superagent';
 import SignUpForm from './SignUpForm';
 import '../../Styles/LoginSignUp.css'
 
@@ -12,40 +13,28 @@ class LoginSignUp extends Component {
       lastName: '',
       submitted: false,
       resp: [],
+      token: null,
     }
   };
 
-    // componentDidMount() {
-    //   fetch("https://thawing-wave-85503.herokuapp.com/api/familyMembers")
-    //     .then(results => results.json())
-    //     .then(response =>{
-    //       let resp = response._embedded.familyMembers
-    //       console.log(resp)
-    //       console.log(this.state)
-    //       this.setState ({
-    //         resp: resp
-    //       })
-    //       console.log("this.state.resp" + this.state.resp)
-    //       console.log(resp)
-    //
-    //     })
-    // }
+  //Grabbing the token
 
-    // shouldComponentUpdate(nextState) {
-    //   if(this.state.email !== this.nextState.email && this.state.lastName !== this.nextState.lastName)
-    //   return true;
-    // }
+  componentWillMount() {
 
-    // componentDidUpdate() {
-    //   if(this.state.email === this.email && this.state.lastName === this.lastName) {
-    //     <Redirect to="/home"/>
-    //   }
-    //   else {
-    //     console.log("login error")
-    //   }
-    // }
+      this.setState({token: cookie.load('token')});
+      console.log(this.state.token);
+    }
+
+  setToken(token) {
+      this.setState({token: token});
+
+      cookie.save('token', token);
+  console.log(this.state.token);
+    }
+
 
   render() {
+
     console.log(this.state.resp)
     return (
       <div className="">
@@ -53,7 +42,8 @@ class LoginSignUp extends Component {
         <div className="loginSignUpBody">
         <div><h1 className="loginSignupBanner">Finally, Bringing the family together under one roof!</h1></div>
         <div className="logSignMainContainer">
-          <LoginForm resp={this.state.resp}/>
+          <LoginForm resp={this.state.resp}
+            setToken={this.setToken.bind(this)}/>
           <SignUpForm />
         </div>
         </div>

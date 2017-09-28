@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../Styles/Home.css';
 import RecentMessage from './Messages/RecentMessage';
-import MessageList from './Messages/MessageList.jsx';
+
 
 class Home extends Component {
   constructor(props) {
@@ -14,9 +14,12 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    console.log(this.state.messageContent)
+
     console.log("message fetched");
-    fetch("https://thawing-wave-85503.herokuapp.com/api/messages")
+    fetch("https://thawing-wave-85503.herokuapp.com/api/messages", {
+      credentials:'include',
+    })
+
       .then(results => results.json())
       .then(response => {
         let messageList = response._embedded.messages

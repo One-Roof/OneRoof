@@ -13,7 +13,8 @@ class LoginForm extends Component {
     this.state = {
       email: '',
       password: '',
-      loginSuccess: false
+      loginSuccess: false,
+      token: '',
     }
     console.log(this.props.resp)
 
@@ -31,14 +32,16 @@ class LoginForm extends Component {
 };
 
   handleFormSubmit(e) {
+    let setToken = this.props.setToken;
     e.preventDefault();
-    // console.log(this.props.resp)
-    console.log(this.state.email)
-    console.log(this.state.password)
+
+
+    console.log(setToken);
+
 
     var form = new FormData()
 
-  form.append('username', this.state.email),
+  form.append('username', this.state.email)
   form.append('password', this.state.password)
   console.log(form)
 
@@ -48,8 +51,9 @@ class LoginForm extends Component {
     headers: {
       'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
       'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-
-    }
+      'Authorization': 'Basic ' + window.btoa(this.state.email + ":" + this.state.password)
+    },
+    credentials:'include',
   })
     .then((function(response) {
       console.log(response)
@@ -95,5 +99,3 @@ class LoginForm extends Component {
 }
 
 export default LoginForm;
-
-// 'Authorization': 'Basic ' + window.btoa(this.state.email + ":" + this.state.password)
