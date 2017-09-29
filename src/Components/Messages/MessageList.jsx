@@ -10,25 +10,50 @@ class MessageList extends Component {
       messageContent: "",
       id: "",
       content: "",
-      date: ""
+      date: "",
+      userName: ""
     };
 
     this.handleMessageChange = this.handleMessageChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
+  // componentDidMount() {
+  //   console.log(this.state.messageContent);
+  //   console.log("message fetched");
+  //   fetch("https://thawing-wave-85503.herokuapp.com/api/messages", {
+  //     credentials: "include"
+  //   })
+  //     .then(results => results.json())
+  //     .then(response => {
+  //       let messageList = response._embedded.messages;
+  //       this.setState({
+  //         messageList: messageList
+  //       });
+  //     });
+  // }
+
   componentDidMount() {
-    console.log(this.state.messageContent);
     console.log("message fetched");
     fetch("https://thawing-wave-85503.herokuapp.com/api/messages", {
       credentials: "include"
     })
       .then(results => results.json())
-      .then(response => {
-        let messageList = response._embedded.messages;
-        this.setState({
-          messageList: messageList
-        });
+      .then(responseOne => {
+        fetch("https://thawing-wave-85503.herokuapp.com/something", {
+          credentials: "include"
+        })
+          .then(results => results.json())
+          .then(responseTwo => {
+            let userName = responseTwo.username;
+            let messageList = responseOne._embedded.messages;
+            this.setState({
+              messageList: messageList,
+              userName: userName
+            });
+            console.log(this.state.username);
+          });
+        console.log(this.state.username);
       });
   }
 
@@ -97,13 +122,13 @@ class MessageList extends Component {
     let addMessage = {
       content: this.state.messageContent,
       date: today,
-      userId: 1
+      userId: 1,
     };
 
     fetch("https://thawing-wave-85503.herokuapp.com/api/messages", {
       method: "POST",
       headers: new Headers({
-        Authorization: "Basic",
+        
         "Content-Type": "application/json"
       }),
       credentials: "include",
@@ -148,7 +173,9 @@ class MessageList extends Component {
         </div>
         <div className="userBio">
           <div className="profilePicture" />
-          <div>User: Matt McDonald</div>
+          <div className="usersMessageName">
+            {this.state.userName}
+          </div>
         </div>
       </div>
     );

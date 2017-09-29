@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import "../../Styles/Header.css";
 
 class Header extends Component {
+
+  handleLogOut(e) {
+    this.setState({loginSuccess: false})
+  }
+
+
+
   render() {
     return (
       <div className="headerContainer">
@@ -23,6 +30,9 @@ class Header extends Component {
           </Link>
           <Link className="headerLink" to="/">
             Sign Up
+          </Link>
+          <Link className="headerLink" to="/" onClick={this.handleLogOut}>
+            Log Out
           </Link>
         </div>
       </div>

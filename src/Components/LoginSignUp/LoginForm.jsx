@@ -18,7 +18,7 @@ class LoginForm extends Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
-  //HANDLING ANY CHANGE IN THE INPUT FIELDS OF THE LOGIN FORM
+//HANDLING ANY CHANGE IN THE INPUT FIELDS OF THE LOGIN FORM
   handleuserNameChange = event => {
     this.setState({ userName: event.target.value });
   };
@@ -27,10 +27,13 @@ class LoginForm extends Component {
     this.setState({ password: event.target.value });
   };
 
-  //APPENDING WHAT WAS CHANGED IN THE FORM TO THE DATABASE THAT IS FETCHED ON THE FORM SUBMISSION BUTTTON
+//APPENDING WHAT WAS CHANGED IN THE FORM TO THE DATABASE THAT IS FETCHED ON THE FORM SUBMISSION BUTTTON
 
   handleFormSubmit(e) {
+
+
     e.preventDefault();
+
 
     var form = new FormData();
 
@@ -54,9 +57,9 @@ class LoginForm extends Component {
         console.log(response);
         if (response.status === 200) {
           this.setState({ loginSuccess: true });
-          console.log("success");
+          console.log("login is " + this.state.loginSuccess);
         } else {
-          console.log("login error");
+          console.log("login is " + this.state.loginSuccess);
         }
       }.bind(this)
     );

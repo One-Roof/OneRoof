@@ -26,15 +26,15 @@ class Home extends Component {
         })
           .then(results => results.json())
           .then(responseTwo => {
-            let name = responseTwo.name;
+            let userName = responseTwo.username;
             let messageList = responseOne._embedded.messages;
             this.setState({
               messageList: messageList,
-              name: name
+              userName: userName
             });
-            console.log(this.state.name);
+            console.log(this.state.userName);
           });
-        console.log(this.state.name);
+        console.log(this.state.userName);
       });
   }
 
@@ -43,7 +43,7 @@ class Home extends Component {
       <div className="App">
         <div className="App-header">
           <h2 className="usersWelcomeName">
-            Welcome, {this.state.name}
+            Welcome, {this.state.userName}
           </h2>
         </div>
         <div className="homeMainContainer">
@@ -65,17 +65,18 @@ class Home extends Component {
 
 export default Home;
 
+
 //INITIAL FETCH FOR RECENT MESSAGES ON PAGE LOADING
-// componentDidMount() {
-//   console.log("message fetched");
-//   fetch("https://thawing-wave-85503.herokuapp.com/api/messages", {
-//     credentials: "include"
-//   })
-//     .then(results => results.json())
-//     .then(response => {
-//       let messageList = response._embedded.messages;
-//       this.setState({
-//         messageList: messageList
-//       });
-//     });
-// }
+  // componentDidMount() {
+  //   console.log("message fetched");
+  //   fetch("https://thawing-wave-85503.herokuapp.com/api/messages", {
+  //     credentials: "include"
+  //   })
+  //     .then(results => results.json())
+  //     .then(response => {
+  //       let messageList = response._embedded.messages;
+  //       this.setState({
+  //         messageList: messageList
+  //       });
+  //     });
+  // }
