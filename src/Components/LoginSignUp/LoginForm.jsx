@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Redirect, Refresh } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import "../../Styles/LoginSignUp.css";
 import "../../Styles/LoginSignUp.css";
 

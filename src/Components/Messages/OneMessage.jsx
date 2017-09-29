@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import '../../Styles/MessageList.css';
 
 class OneMessage extends Component {
-  constructor(props) {
-    super(props);
 
-  }
   render() {
     let oneMessage = this.props.messageList.map(message => {
 

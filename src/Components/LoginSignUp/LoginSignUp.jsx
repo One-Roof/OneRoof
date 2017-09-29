@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import LoginForm from "./LoginForm";
-import cookie from "react-cookies";
-import request from "superagent";
+
 import SignUpForm from "./SignUpForm";
 import "../../Styles/LoginSignUp.css";
 
