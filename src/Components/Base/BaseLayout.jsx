@@ -11,7 +11,7 @@ class BaseLayout extends Component {
         {this.props.children}
         <Footer />
       </div>
-    )
+    );
   }
 }
 

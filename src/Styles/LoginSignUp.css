@@ -52,27 +52,27 @@
 .signUpSubmitButton {
   font-size: 16px;
   border-radius: 5px;
-  border: thin solid #004E64;
+  border: thin solid #004e64;
   background-color: white;
-  color: #004E64;
+  color: #004e64;
   outline: none;
   font-family: 'Raleway';
 }
 .signUpSubmitButton:hover {
-  background-color: #004E64;
+  background-color: #004e64;
   color: white;
 }
 
 .loginSubmitButton {
   font-size: 16px;
   border-radius: 5px;
-  border: thin solid #004E64;
+  border: thin solid #004e64;
   background-color: white;
-  color: #004E64;
+  color: #004e64;
   outline: none;
   font-family: 'Raleway';
 }
 .loginSubmitButton:hover {
-  background-color: #004E64;
+  background-color: #004e64;
   color: white;
 }
