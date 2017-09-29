@@ -1,56 +1,42 @@
-import React, { Component } from 'react';
-import LoginForm from './LoginForm';
-import cookie from 'react-cookies';
-import request from 'superagent';
-import SignUpForm from './SignUpForm';
-import '../../Styles/LoginSignUp.css'
+import React, { Component } from "react";
+import LoginForm from "./LoginForm";
+import cookie from "react-cookies";
+import request from "superagent";
+import SignUpForm from "./SignUpForm";
+import "../../Styles/LoginSignUp.css";
 
 class LoginSignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      lastName: '',
+      email: "",
+      lastName: "",
       submitted: false,
       resp: [],
-      token: null,
-    }
-  };
-
-  //Grabbing the token
-
-  componentWillMount() {
-      this.setState({token: cookie.load('token')});
-    }
-
-  setToken(token) {
-      this.setState({token: token});
-      cookie.save('token', token);
-    }
-
+      token: null
+    };
+  }
 
   render() {
-    console.log(this.state.token)
-
     return (
       <div className="">
-
         <div className="loginSignUpBody">
-        <div><h1 className="loginSignupBanner">Bringing the family back together under one roof!</h1></div>
-        <div className="logSignMainContainer">
-          <LoginForm resp={this.state.resp}
-            setToken={this.setToken.bind(this)}/>
-          <SignUpForm />
+          <div>
+            <h1 className="loginSignupBanner">
+              Bringing the family back together under one roof!
+            </h1>
+          </div>
+          <div className="logSignMainContainer">
+            <LoginForm resp={this.state.resp} />
+            <SignUpForm />
+          </div>
         </div>
-        </div>
-
       </div>
     );
   }
 }
 
 export default LoginSignUp;
-
 
 //ORIGINAL///
 

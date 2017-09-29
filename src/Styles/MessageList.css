@@ -28,14 +28,14 @@
 .submitButton {
   font-size: 16px;
   border-radius: 5px;
-  border: thin solid #004E64;
+  border: thin solid #004e64;
   background-color: white;
-  color: #004E64;
+  color: #004e64;
   outline: none;
   font-family: 'Raleway';
 }
 .submitButton:hover {
-  background-color: #004E64;
+  background-color: #004e64;
   color: white;
 }
 .messageHeader {
@@ -53,14 +53,14 @@
   height: 20px;
   outline: none;
   border-radius: 5px;
-  border: thin solid #004E64;
+  border: thin solid #004e64;
   background-color: white;
-  color: #004E64;
+  color: #004e64;
   font-family: 'Raleway';
 }
 
 .refreshButton:hover {
-  background-color: #004E64;
+  background-color: #004e64;
   color: white;
 }
 
