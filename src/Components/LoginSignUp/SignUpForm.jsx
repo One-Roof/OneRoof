@@ -16,12 +16,12 @@ class SignUpForm extends Component {
       signUpSuccess: false
     };
 
-    this.updateFromField = this.updateFromField.bind(this);
+    this.updateFormField = this.updateFormField.bind(this);
     this.handleSignUpSubmit = this.handleSignUpSubmit.bind(this);
   }
 
   //UPDATES FORM FIELDS AS THEY CHANGE AND SAVES IT TO STATE
-  updateFromField(stateKey) {
+  updateFormField(stateKey) {
     return event => {
       this.setState({ [stateKey]: event.target.value });
     };
@@ -96,7 +96,7 @@ class SignUpForm extends Component {
             <label className="signupLabel">First Name:</label>
             <input
               type="text"
-              onChange={this.updateFromField("firstName")}
+              onChange={this.updateFormField("firstName")}
               value={this.state.firstName}
             />
           </div>
@@ -106,7 +106,7 @@ class SignUpForm extends Component {
             <input
               className="familyName"
               type="text"
-              onChange={this.updateFromField("lastName")}
+              onChange={this.updateFormField("lastName")}
               value={this.state.lastName}
             />
           </label>
@@ -116,7 +116,7 @@ class SignUpForm extends Component {
             <input
               className="userName"
               type="text"
-              onChange={this.updateFromField("username")}
+              onChange={this.updateFormField("username")}
               value={this.state.username}
             />
           </label>
@@ -125,7 +125,7 @@ class SignUpForm extends Component {
             Email:
             <input
               type="email"
-              onChange={this.updateFromField("email")}
+              onChange={this.updateFormField("email")}
               value={this.state.email}
             />
           </label>
@@ -134,7 +134,7 @@ class SignUpForm extends Component {
             Age:
             <input
               type="number"
-              onChange={this.updateFromField("age")}
+              onChange={this.updateFormField("age")}
               value={this.state.age}
             />
           </label>
@@ -143,7 +143,7 @@ class SignUpForm extends Component {
             Password:
             <input
               type="password"
-              onChange={this.updateFromField("password")}
+              onChange={this.updateFormField("password")}
               value={this.state.password}
             />
           </label>

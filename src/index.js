@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
+import { CookiesProvider } from 'react-cookie';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import "./Styles/index.css";
@@ -16,6 +16,7 @@ import LoginSignUp from "./Components/LoginSignUp/LoginSignUp.jsx";
 
 ReactDOM.render(
   <BrowserRouter>
+  
     <BaseLayout>
       <Switch>
         <Route path="/albums" component={Albums} />
@@ -25,6 +26,7 @@ ReactDOM.render(
         <Route path="/" component={LoginSignUp} />
       </Switch>
     </BaseLayout>
+
   </BrowserRouter>,
   document.getElementById("root")
 );
