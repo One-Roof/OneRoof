@@ -128,13 +128,24 @@ class MessageList extends Component {
     fetch("https://thawing-wave-85503.herokuapp.com/api/messages", {
       method: "POST",
       headers: new Headers({
-        
+
         "Content-Type": "application/json"
       }),
       credentials: "include",
       body: JSON.stringify(addMessage)
-    });
-  }
+    }).then(responseTwo => { fetch("https://thawing-wave-85503.herokuapp.com/api/messages", {
+      credentials: "include"
+    })
+      .then(results => results.json())
+      .then(responseThree => {
+            let messageList = responseThree._embedded.messages;
+            this.setState({
+              messageList: messageList,
+            })
+            console.log(this.state.username);
+          })
+        })
+    }
 
   render() {
     return (
@@ -159,11 +170,6 @@ class MessageList extends Component {
             <div className="messageHeader">
               <div>
                 <h2>Recent Posts:</h2>
-              </div>
-              <div className="refreshButtonContainer">
-                <button type="submit" className="refreshButton">
-                  Refresh
-                </button>
               </div>
             </div>
             <div>

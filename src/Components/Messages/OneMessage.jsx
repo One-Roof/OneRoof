@@ -2,8 +2,36 @@ import React, { Component } from 'react';
 import '../../Styles/MessageList.css';
 
 class OneMessage extends Component {
+  constructor(props) {
+    super()
+    this.state = {
+      messageId: '',
+    }
 
-  
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  handleDelete(e) {
+
+    return fetch("https://thawing-wave-85503.herokuapp.com/api/messages", {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json, application/xml, text/plain, text/html, *.*",
+      },
+      credentials: "include"
+    }).then(
+      function(response) {
+        console.log(response);
+        if (response.status === 200) {
+          console.log("message deleted")
+        } else {
+          console.log("message not deleted")
+        }
+      }.bind(this)
+    );
+  }
+
+
 
   render() {
     let oneMessage = this.props.messageList.map(message => {
@@ -16,7 +44,7 @@ class OneMessage extends Component {
           <div>
             <p className="oneMessageContent">{message.content}</p>
             <p>{message.date}</p>
-            <a href="#">[X]</a>
+            <button onClick={this.handleDelete}>[X]</button>
 
           </div>
         </div>
