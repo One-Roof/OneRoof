@@ -3,6 +3,8 @@ import '../../Styles/MessageList.css';
 
 class OneMessage extends Component {
 
+  
+
   render() {
     let oneMessage = this.props.messageList.map(message => {
 

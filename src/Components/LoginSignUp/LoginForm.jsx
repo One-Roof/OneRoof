@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import "../../Styles/LoginSignUp.css";
 import "../../Styles/LoginSignUp.css";
+import { Cookies } from 'js-cookie';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -30,10 +31,8 @@ class LoginForm extends Component {
 //APPENDING WHAT WAS CHANGED IN THE FORM TO THE DATABASE THAT IS FETCHED ON THE FORM SUBMISSION BUTTTON
 
   handleFormSubmit(e) {
-
-
     e.preventDefault();
-
+  
 
     var form = new FormData();
 

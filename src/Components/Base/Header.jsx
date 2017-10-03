@@ -1,16 +1,42 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../../Styles/Header.css";
+import cookie from 'react-cookies';
+import { Redirect } from "react-router-dom";
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      logOutSuccess: false,
+    }
 
+  this.handleLogOut = this.handleLogOut.bind(this)
+}
   handleLogOut(e) {
-    this.setState({loginSuccess: false})
+    return fetch("https://thawing-wave-85503.herokuapp.com/logout", {
+      method: "GET",
+      headers: {
+        Accept: "application/json, application/xml, text/plain, text/html, *.*",
+      },
+      credentials: "include"
+    }).then(
+      function(response) {
+        console.log(response);
+        if (response.status === 200) {
+          this.setState({ logOutSuccess: true });
+          console.log("logout is " + this.state.logOutSuccess);
+        } else {
+          console.log("logout is " + this.state.logOutSuccess);
+        }
+      }.bind(this)
+    );
   }
 
 
-
   render() {
+  
+
     return (
       <div className="headerContainer">
         <div className="headerLeft">

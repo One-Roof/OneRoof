@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import { withRouter } from 'react-router-dom'
 import Header from "./Header";
 import Footer from "./Footer";
 
@@ -15,4 +15,4 @@ class BaseLayout extends Component {
   }
 }
 
-export default BaseLayout;
+export default withRouter(BaseLayout);
