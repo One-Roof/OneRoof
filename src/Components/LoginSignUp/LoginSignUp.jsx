@@ -3,6 +3,8 @@ import LoginForm from "./LoginForm";
 
 import SignUpForm from "./SignUpForm";
 import "../../Styles/LoginSignUp.css";
+import { findDOMNode } from "react-dom";
+import $ from "jquery";
 
 class LoginSignUp extends Component {
   constructor(props) {
@@ -12,9 +14,18 @@ class LoginSignUp extends Component {
       lastName: "",
       submitted: false,
       resp: [],
-      token: null
+      token: null,
+      className: '',
     };
   }
+
+
+//  handleUpdateClass(e) {
+//
+//     let hideLogin = 'hideLogin'
+//     this.setState({className: hideLogin})
+//     console.log(this.state.className);
+// }
 
   render() {
     return (
@@ -25,9 +36,15 @@ class LoginSignUp extends Component {
               Bringing the family back together under one roof!
             </h1>
           </div>
+          <div>Click</div>
+          <button onClick={this.handleUpdateClass} className={this.state.className}>Click</button>
           <div className="logSignMainContainer">
-            <LoginForm resp={this.state.resp} />
+            <div id="loginFormAnimation">
+            <LoginForm  resp={this.state.resp} />
+            </div>
+            <div>
             <SignUpForm />
+            </div>
           </div>
         </div>
       </div>

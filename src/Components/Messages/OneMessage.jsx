@@ -31,8 +31,6 @@ class OneMessage extends Component {
     );
   }
 
-
-
   render() {
     let oneMessage = this.props.messageList.map(message => {
 
@@ -45,7 +43,6 @@ class OneMessage extends Component {
             <p className="oneMessageContent">{message.content}</p>
             <p>{message.date}</p>
             <button onClick={this.handleDelete}>[X]</button>
-
           </div>
         </div>
       );

@@ -76,3 +76,7 @@
   background-color: #004e64;
   color: white;
 }
+
+.hideLogin {
+  display: none;
+}
