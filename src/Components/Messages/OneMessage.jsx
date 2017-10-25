@@ -31,21 +31,13 @@ class OneMessage extends Component {
     );
   }
 
-
-
   render() {
     let oneMessage = this.props.messageList.map(message => {
 
       return (
         <div className="oneMessageContainer" key={message._links.self.href}>
-          <div className="">
-            <p>User:</p>
-          </div>
           <div>
-            <p className="oneMessageContent">{message.content}</p>
-            <p>{message.date}</p>
-            <button onClick={this.handleDelete}>[X]</button>
-
+            <p>{message.content}  -  <span className="oneMessageContent">Bob</span></p>
           </div>
         </div>
       );

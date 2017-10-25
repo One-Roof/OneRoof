@@ -2,18 +2,23 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
-  height: 40vw;
+  height: 83vh;
   margin: auto;
   font-family: 'Raleway';
+  overflow: scroll;
+
 }
 .messageFormContainer {
   padding: 10px;
   width: 70vw;
   text-align: center;
+  margin-top: 10px;
 }
 .messageListContainer {
   padding: 10px;
   width: 70vw;
+  margin-left: 10px;
+  overflow: scroll;
 }
 .titleBlock {
   margin-bottom: 10px;
@@ -65,17 +70,18 @@
 }
 
 .oneMessageContainer {
-  border: 1px solid black;
+  border: 1px solid;
   border-radius: 5px;
   margin: 5px;
   padding-left: 10px;
+  border-color: #004e64;
 }
 .oneMessageContent {
   font-style: italic;
 }
 
 .userBio {
-  border: 1px solid black;
+  border: 1px solid;
   border-radius: 5px;
   width: 20vw;
   height: 20vw;
@@ -83,13 +89,17 @@
   grid-template-columns: 1fr;
   justify-items: center;
   margin-top: 1vw;
+  border-color: #004e64;
+
 }
 .profilePicture {
-  border: 1px solid black;
+  border: 1px solid;
   width: 10vw;
   height: 10vw;
   border-radius: 50%;
   margin-top: 20px;
+  border-color: #004e64;
+
 }
 .usersMessageName {
   text-transform: capitalize;

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 82vh;
 }
 
 .App-header {
@@ -22,6 +23,8 @@
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
+  overflow: scroll;
+  border-color: #004e64;
 }
 
 .recentMessagesContainer {
@@ -30,7 +33,19 @@
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
+  overflow: scroll;
+  border-color: #004e64;
 }
 .usersWelcomeName {
   text-transform: capitalize;
+}
+.dateBullet {
+  line-height: 3;
+  list-style: none;
+}
+.eventsheader {
+  text-decoration: underline;
+}
+.homeMessageHeader {
+  text-decoration: underline;
 }

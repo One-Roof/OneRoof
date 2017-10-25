@@ -32,7 +32,7 @@ class LoginForm extends Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
-  
+
 
     var form = new FormData();
 
@@ -70,13 +70,19 @@ class LoginForm extends Component {
     }
 
     return (
-      <div className="loginContainer">
-        <h1 className="loginTitle">Login</h1>
+      <div className="loginBody">
+        <div className="bannerContainer">
+          <h1 className="loginSignupBanner">
+            Bringing the family back together under one roof!
+          </h1>
+        </div>
+        <div className="loginContainer">
         <form className="loginForm" onSubmit={this.handleFormSubmit}>
+          <p className="descriptionParagraph">OneRoof is a one stop shop for family collaboration. Plan vacations, keep track of important dates and collaborate as a family like you are all back under one roof!</p>
           <label className="userNameLabel">
             Username:
             <input
-              className="userNamebox"
+              className="namebox"
               type={"text"}
               value={this.state.userName}
               onChange={this.handleuserNameChange}
@@ -93,8 +99,9 @@ class LoginForm extends Component {
             />
           </label>
           <br />
-          <input className="loginSubmitButton" type="submit" value="Submit" />
+          <input className="loginSubmitButton" type="submit" value="Log In" />
         </form>
+        </div>
       </div>
     );
   }

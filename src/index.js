@@ -13,17 +13,20 @@ import Calendar from "./Components/Calendar/Calendar.js";
 import BaseLayout from "./Components/Base/BaseLayout";
 import Albums from "./Components/Album/Albums";
 import LoginSignUp from "./Components/LoginSignUp/LoginSignUp.jsx";
+import LoginForm from "./Components/LoginSignUp/LoginForm.jsx";
+import SignUpForm from "./Components/LoginSignUp/SignUpForm.jsx";
 
 ReactDOM.render(
   <BrowserRouter>
-  
+
     <BaseLayout>
       <Switch>
         <Route path="/albums" component={Albums} />
         <Route path="/home" component={Home} />
         <Route path="/calendar" component={Calendar} />
         <Route path="/messagelist" component={MessageList} />
-        <Route path="/" component={LoginSignUp} />
+        <Route path="/signup" component={SignUpForm} />
+        <Route path="/" component={LoginForm} />
       </Switch>
     </BaseLayout>
 

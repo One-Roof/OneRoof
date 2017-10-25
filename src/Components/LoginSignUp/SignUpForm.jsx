@@ -71,7 +71,7 @@ class SignUpForm extends Component {
           .then(
             function(response) {
               console.log(response);
-              if (response.status === 201) {
+              if (response.status === 201 || response.status === 200) {
                 this.setState({ signUpSuccess: true });
                 console.log("sign up is " + this.state.signUpSuccess);
                 console.log(newUserCheck);
@@ -89,22 +89,25 @@ class SignUpForm extends Component {
     }
 
     return (
-      <div className="signUpContainer">
-        <h1 className="signupTitle">Sign-up</h1>
+      <div className="signUpBody">
+        <div className="bannerContainer">
+          <h1 className="loginSignupBanner">
+            Bringing the family back together under one roof!
+          </h1>
+        </div>
+        <div className="signUpContainer">
         <form className="signupForm" onSubmit={this.handleSignUpSubmit}>
-          <div>
+            <p className="signupdescriptionParagraph">OneRoof is a one stop shop for family collaboration. Plan vacations, keep track of important dates and collaborate as a family like you are all back under one roof!</p>
             <label className="signupLabel">First Name:</label>
-            <input
+            <input className="nameField"
               type="text"
               onChange={this.updateFormField("firstName")}
               value={this.state.firstName}
             />
-          </div>
           <br />
           <label className="signupLabel">
             Last Name:
-            <input
-              className="familyName"
+            <input className="nameField"
               type="text"
               onChange={this.updateFormField("lastName")}
               value={this.state.lastName}
@@ -113,8 +116,7 @@ class SignUpForm extends Component {
           <br />
           <label className="signupLabel">
             Username:
-            <input
-              className="userName"
+            <input className="usernameField"
               type="text"
               onChange={this.updateFormField("username")}
               value={this.state.username}
@@ -123,7 +125,7 @@ class SignUpForm extends Component {
           <br />
           <label className="signupLabel">
             Email:
-            <input
+            <input className="emailField"
               type="email"
               onChange={this.updateFormField("email")}
               value={this.state.email}
@@ -131,30 +133,17 @@ class SignUpForm extends Component {
           </label>
           <br />
           <label className="signupLabel">
-            Age:
-            <input
-              type="number"
-              onChange={this.updateFormField("age")}
-              value={this.state.age}
-            />
-          </label>
-          <br />
-          <label className="signupLabel">
             Password:
-            <input
+            <input className="passwordField"
               type="password"
               onChange={this.updateFormField("password")}
               value={this.state.password}
             />
           </label>
           <br />
-          <label className="signupLabel">
-            Confirm Password:
-            <input type="password" />
-          </label>
-          <br />
-          <input className="signUpSubmitButton" type="submit" />
+          <input className="signUpSubmitButton" type="submit" value="Sign Up"/>
         </form>
+        </div>
       </div>
     );
   }
