@@ -1,52 +1,87 @@
-.logSignMainContainer {
+/*.logSignMainContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
-}
+}*/
 
+.loginBody {
+  /*border: 1px solid black;*/
+  /*margin: 5px 5px 5px 30%;
+  padding: 5px;
+  width: 25vw;*/
+  text-align: center;
+  height: 75vh;
+}
 .loginContainer {
-  /*border: 1px solid black;*/
-  margin: 5px 5px 5px 30%;
-  padding: 5px;
-  width: 25vw;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 5%;
 }
-
-.signUpContainer {
-  /*border: 1px solid black;*/
-  margin: 5px 55% 5px 5px;
-  padding: 5px;
-  width: 25vw;
+.userNameLabel {
+  /*line-height: 3;*/
 }
-
-.loginSignUpBody {
-  height: 35vw;
-  font-family: 'Raleway', sans-serif;
+.descriptionParagraph {
+  width: 40vw;
+  line-height: 2;
 }
-
-.loginSignupBanner {
+.signupdescriptionParagraph {
+  width: 40vw;
+  line-height: 2;
   text-align: center;
 }
 
+
+.signUpContainer {
+  /*border: 1px solid black;*/
+  /*margin: 5px 55% 5px 5px;
+  padding: 5px;
+  width: 25vw;*/
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-top: 3%;
+}
+
+/*.loginSignUpBody {
+  height: 35vw;
+  font-family: 'Raleway', sans-serif;
+}*/
+
+.loginSignupBanner {
+  text-align: center;
+  font-family: 'Raleway';
+  justify-content: center;
+}
+.bannerContainer {
+  justify-content: center;
+  text-align: center;
+  margin-top: 3%;
+}
+
 .loginForm {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
+  line-height: 3;
+  border: .5px solid black;
+  padding: 20px;
+  border-radius: 5px;
+  border-color: #004e64;
+  font-family: 'Raleway';
+}
+.signUpBody {
+  height: 80vh;
+
 }
 
 .signupForm {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.loginTitle {
-  margin-left: 65%;
-}
-
-.signupTitle {
-  margin-left: 60%;
+  border: .4px solid black;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 2;
+  border-color: #004e64;
+  font-family: 'Raleway';
 }
 
 .signUpSubmitButton {
@@ -57,6 +92,8 @@
   color: #004e64;
   outline: none;
   font-family: 'Raleway';
+
+  margin-top: 20px;
 }
 .signUpSubmitButton:hover {
   background-color: #004e64;
@@ -76,7 +113,19 @@
   background-color: #004e64;
   color: white;
 }
+.emailField {
+  margin-left: 43px;
+}
+.nameField {
+  margin-left: 5px;
+}
+.usernameField {
+  margin-left: 10px;
+}
+.passwordField {
+  margin-left: 13px;
+}
+.namebox {
+  margin-left: 5px;
 
-.hideLogin {
-  display: none;
 }

@@ -48,13 +48,16 @@ class Home extends Component {
         </div>
         <div className="homeMainContainer">
           <div className="upcomingEventsContainer">
-            <h4>Upcoming Events</h4>
-            <ul>
-              <li />
-            </ul>
+            <h3 className="eventsheader">Upcoming Events</h3>
+            <div className="upcomingdateBox">
+                <li className="dateBullet">Oct. 27th  -  Matt's Birthday</li>
+                <li className="dateBullet">Nov. 23rd  -  Thanksgiving</li>
+                <li className="dateBullet">Dec. 25th  -  Christmas</li>
+                <li className="dateBullet">April 1st  -  Julia's Wedding</li>
+            </div>
           </div>
           <div className="recentMessagesContainer">
-            <h4>Recent Messages: </h4>
+            <h3 className="homeMessageHeader">Recent Messages</h3>
             <RecentMessage messageList={this.state.messageList} />
           </div>
         </div>

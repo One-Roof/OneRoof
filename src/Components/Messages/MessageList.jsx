@@ -57,59 +57,6 @@ class MessageList extends Component {
       });
   }
 
-  //Attempt at getting the messages to refresh on submit*******
-
-  // componentDidUpdate() {
-  //
-  //     fetch("https://thawing-wave-85503.herokuapp.com/api/messages", {
-  //       credentials:'include',
-  //     })
-  //       .then(results => results.json())
-  //       .then(response => {
-  //         let messageList = response._embedded.messages
-  //         this.setState({
-  //           messageList: messageList
-  //         })
-  //       })
-  //   }
-
-  //ATTEMPT AT DELETE ON DELETE BUTTON CLICK*********************
-  //
-  //   handleOnDeleteClick(id,content,date) {
-  //      this.setState({
-  //         id: message._links.self.href,
-  //         content: content,
-  //         date: date,
-  //       });
-  //       }
-  //
-  //   handleDelete(id) {
-  //     fetch (id,
-  //     { method: 'DELETE',})
-  //     .then(
-  //         res =>  this.setState({jsonReturnedValue : json})
-  //     )
-  //     .catch( err => console.error(err))
-  // }
-  // handleOnclick(id,name,address) {
-  //
-  //
-  //    this.setState({
-  //       Employee_Name: name,
-  //       Address: address,
-  //     });
-  //     }
-  //
-  //   deleteEmployee(id) {
-  //       debugger
-  //         fetch ('http://localhost:5118/api/employeedetails/deleteemployeedetail/'+ id,
-  //         { method: 'DELETE',})
-  //         .then(
-  //             res =>  this.setState({jsonReturnedValue : json})
-  //         )
-  //         .catch( err => console.error(err))
-  //     }
-
   //INITIAL FETCH TO POST A MESSAGE TO THE DATABASE ON FORM SUBMIT
   handleMessageChange = event => {
     this.setState({ messageContent: event.target.value });
@@ -162,8 +109,7 @@ class MessageList extends Component {
                   placeholder="What's on your mind?"
                 />
               </label>
-
-              <input className="submitButton" type="Submit" value="Submit" />
+              <input className="submitButton" type="Submit" value="Post" />
             </form>
           </div>
           <div className="messageListContainer">
@@ -172,20 +118,97 @@ class MessageList extends Component {
                 <h2>Recent Posts:</h2>
               </div>
             </div>
+            <div className="oneMessageContainer">
+              <div>
+                <p>I will I will Julia, it's sitting on my counter waiting for a stamp!  -  <span className="oneMessageContent">Bob</span></p>
+              </div>
+            </div>
+            <div className="oneMessageContainer">
+              <div>
+                <p>Also remember to mail in your RSVPs for my wedding! I'm talking to you Bob...  -  <span className="oneMessageContent">Julia</span></p>
+              </div>
+            </div>
+            <div className="oneMessageContainer">
+              <div>
+                <p>I think I could make that work, I have to check with work but I might be able to make it for a few days.  -  <span className="oneMessageContent">Julia</span></p>
+              </div>
+            </div>
+            <div className="oneMessageContainer">
+              <div>
+                <p>That sounds fun to me!  -  <span className="oneMessageContent">Matt</span></p>
+              </div>
+            </div>
             <div>
               <OneMessage messageList={this.state.messageList} />
             </div>
           </div>
         </div>
         <div className="userBio">
-          <div className="profilePicture" />
+          <div >
+            <img className="profilePicture"
+              src={require("../../Styles/images/MattPic.jpg")}
+            />
+          </div>
           <div className="usersMessageName">
-            {this.state.userName}
+            {this.state.userName} Bobson
           </div>
         </div>
       </div>
     );
   }
 }
+
+//Attempt at getting the messages to refresh on submit*******
+
+// componentDidUpdate() {
+//
+//     fetch("https://thawing-wave-85503.herokuapp.com/api/messages", {
+//       credentials:'include',
+//     })
+//       .then(results => results.json())
+//       .then(response => {
+//         let messageList = response._embedded.messages
+//         this.setState({
+//           messageList: messageList
+//         })
+//       })
+//   }
+
+//ATTEMPT AT DELETE ON DELETE BUTTON CLICK*********************
+//
+//   handleOnDeleteClick(id,content,date) {
+//      this.setState({
+//         id: message._links.self.href,
+//         content: content,
+//         date: date,
+//       });
+//       }
+//
+//   handleDelete(id) {
+//     fetch (id,
+//     { method: 'DELETE',})
+//     .then(
+//         res =>  this.setState({jsonReturnedValue : json})
+//     )
+//     .catch( err => console.error(err))
+// }
+// handleOnclick(id,name,address) {
+//
+//
+//    this.setState({
+//       Employee_Name: name,
+//       Address: address,
+//     });
+//     }
+//
+//   deleteEmployee(id) {
+//       debugger
+//         fetch ('http://localhost:5118/api/employeedetails/deleteemployeedetail/'+ id,
+//         { method: 'DELETE',})
+//         .then(
+//             res =>  this.setState({jsonReturnedValue : json})
+//         )
+//         .catch( err => console.error(err))
+//     }
 
 export default MessageList;

@@ -25,9 +25,11 @@ class Header extends Component {
         console.log(response);
         if (response.status === 200) {
           this.setState({ logOutSuccess: true });
+          this.setState({ userName: "" });
           console.log("logout is " + this.state.logOutSuccess);
         } else {
           console.log("logout is " + this.state.logOutSuccess);
+          this.setState({ userName: "" });
         }
       }.bind(this)
     );
@@ -35,7 +37,7 @@ class Header extends Component {
 
 
   render() {
-  
+
 
     return (
       <div className="headerContainer">
@@ -54,7 +56,7 @@ class Header extends Component {
           <Link className="headerLink" to="/">
             Log In
           </Link>
-          <Link className="headerLink" to="/">
+          <Link className="headerLink" to="/signup">
             Sign Up
           </Link>
           <Link className="headerLink" to="/" onClick={this.handleLogOut}>
